@@ -1,11 +1,103 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-	<meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>新增功能元素</title>
+    <meta charset="utf-8" />
 </head>
-<body> 
+<body>
+    <!--figure-->
+    <figure>
+        <figcaption>标题</figcaption>
+        <p>内容</p>
+    </figure>
 
+    <br />
+    <br />
+    <!--video-->
+    <video src="http://www.w3school.com.cn/i/movie.ogg" controls></video>
+
+    <br />
+    <br />
+    <!--audio-->
+    <audio src="http://www.dkill.net//DNT/music/bs/英雄野望.mp3" autoplay>你的浏览器不支持audio标签。</audio>
+
+    <br />
+    <br />
+    <!--embed-->
+    <embed src="http://www.w3school.com.cn/i/helloworld.swf" />
+
+    <br />
+    <br />
+    <!--mark-->
+    <p>我是<mark>毒逆天</mark></p>
+
+    <br />
+    <br />
+    <!--time-->
+    <p>现在是<time>2016-1-16</time></p>
+
+    <br />
+    <br />
+    <!--canvas-->
+    <canvas id="myCanvas">浏览器不支持HTML5的canvas</canvas>
+    <script type="text/javascript">
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#FF0000';
+        ctx.fillRect(0, 0, 80, 100);
+    </script>
+
+    <br />
+    <br />
+    <!--output-->
+    <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+        <input id="a" type="text" value="1" />+<input id="b" type="text" value="2" />=<output name="x" for="a b"></output>
+    </form>
+
+    <br />
+    <br />
+    <!--menu-->
+    <menu>
+        <li>2</li>
+        <li>1</li>
+    </menu>
+
+    <br />
+    <br />
+    <!--ruby-->
+    <ruby>
+        毒<rt>dú</rt>
+    </ruby>
+
+    <br />
+    <br />
+    <!--detalis-->
+    <details>
+        <summary>散客主页</summary>
+        本博客主要以一些经验和技术分享为主，如有疏漏欢迎指出~ 博客园地址：http://dunitian.cnblogs.com；GitHub地址：https://github.com/dunitian
+    </details>
+
+    <br />
+    <br />
+    <!--datalist-->
+    <input list="num" />
+    <datalist id="num">
+        <option value="1"></option>
+        <option value="2"></option>
+        <option value="3"></option>
+    </datalist>
+
+    <br />
+    <br />
+    <!--meter-->
+    <meter min="0" max="20" value="5"></meter>
+
+    <br />
+    <br />
+    <!--progress-->
+    下载进度：
+    <progress value="22" max="100"></progress>
+    <progress></progress>
 </body>
 </html>
