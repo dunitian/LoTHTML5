@@ -42,11 +42,14 @@
     <Content Include="01.第一个页面.html" />
     <Content Include="02.新增结构元素.html" />
     <Content Include="03.新增功能元素.html" />
-    <Content Include="04.input新增.html" />
+    <Content Include="04.input新增类型.html" />
     <Content Include="test.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="05.input新增属性.html" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
