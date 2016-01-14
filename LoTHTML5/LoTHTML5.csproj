@@ -42,6 +42,8 @@
     <Content Include="01.第一个页面.html" />
     <Content Include="02.新增结构元素.html" />
     <Content Include="03.新增功能元素.html" />
+    <Content Include="04.input新增.html" />
+    <Content Include="test.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
