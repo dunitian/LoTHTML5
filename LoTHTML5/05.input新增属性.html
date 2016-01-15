@@ -7,21 +7,27 @@
 </head>
 <body>
     <!--autocomplete-->
-    usual：<br />
-    <form action="/test.html" method="get">
-        <br /><br />
-        昵称：<input type="text" name="text" /><br /><br />
-        密码：<input type="password" name="pass" /><br /><br />
-        邮箱：<input type="email" name="email" /><br /><br />
-        <input type="submit" value="提交" />
-    </form>
     autocomplete：<br />
-    <form action="/test.html" method="get" autocomplete="on">
-        <br /><br />
+    <form action="#" method="get" autocomplete="on">
         昵称：<input type="text" name="text" /><br /><br />
         密码：<input type="password" name="pass" /><br /><br />
-        邮箱：<input type="email" name="email" /><br /><br />
+        邮箱：<input type="email" name="email" autocomplete="off" />
         <input type="submit" value="提交" />
     </form>
+
+    <br /><br />
+    <!--autofocus-->
+    autofocus:<input type="text" autofocus />
+
+
+    <br /><br />
+    <!--form-->
+    form:<br />
+    <form action="#" method="get" id="form1">
+        tel: <input type="tel" name="tel" />
+        <input type="submit" value="提交"/>
+    </form>
+    color:<input type="color" name="color" value="color" form="form1" /><br />
+    name：<input type="text" name="mytext" form="form1 form2" />
 </body>
 </html>

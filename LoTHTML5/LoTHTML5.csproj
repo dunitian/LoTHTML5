@@ -44,7 +44,6 @@
     <Content Include="03.新增功能元素.html" />
     <Content Include="04.input新增类型.html" />
     <Content Include="LifeDemo\01.搜索框效果.html" />
-    <Content Include="test.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
