@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>表单新增</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <!--datalist-->
+    <form action="#" method="get">
+        Webpage: <input type="url" list="url_list" name="link" />
+        <datalist id="url_list">
+            <option label="W3School" value="http://www.w3school.com.cn" />
+            <option label="Google" value="http://www.google.com" />
+            <option label="Microsoft" value="http://www.microsoft.com" />
+        </datalist>
+        <input type="submit" />
+    </form>
+
+    <br /><br />
+    <!--keygen-->
+    <form action="#" method="get">
+        Username: <input type="text" name="usr_name" />
+        Encryption: <keygen name="security" />
+        <input type="submit" />
+    </form>
+
+    <br /><br />
+    <!--output-->
+    <form onsubmit="x.value='你妹的'">
+        <output name="x" ></output>
+        <input type="submit" value="提交看看呗" />
+    </form>
+</body>
+</html>

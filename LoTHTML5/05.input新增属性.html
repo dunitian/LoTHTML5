@@ -8,7 +8,7 @@
 <body>
     <!--autocomplete-->
     autocomplete：<br />
-    <form action="#" method="get" autocomplete="on">
+    <form action="#" method="get" autocomplete="on" id="form2">
         昵称：<input type="text" name="text" /><br /><br />
         密码：<input type="password" name="pass" /><br /><br />
         邮箱：<input type="email" name="email" autocomplete="off" />
@@ -25,9 +25,54 @@
     form:<br />
     <form action="#" method="get" id="form1">
         tel: <input type="tel" name="tel" />
-        <input type="submit" value="提交"/>
+        <input type="submit" value="提交" />
     </form>
     color:<input type="color" name="color" value="color" form="form1" /><br />
-    name：<input type="text" name="mytext" form="form1 form2" />
+
+    <br /><br />
+    <!--form override-->
+    formaction：<input type="submit" value="提交" form="form1" formaction="/test.html" /><br />
+    formmethod：<input type="submit" value="提交" form="form1" formaction="/test.html" formmethod="post" />
+
+    <br /><br />
+    <!--height width-->
+    height,width：<input type="image" src="/images/1.jpg" width="100" height="100" />
+
+    <br /><br />
+    <!--min，max，step-->
+    min，max，step：<input type="number" min="0" max="10" step="3" />
+
+    <br /><br />
+    <!--multiple-->
+    multple:<input type="file" multiple />
+
+    <br /><br />
+    <!--pattern-->
+    <form action="#" method="get">
+        <input type="text" name="num" pattern="[a-zA-Z]{2}" title="请输入两个英文字母" /><input type="submit" value="提交" />
+    </form>
+
+    <br /><br />
+    <!--placeholder-->
+    placeholder: <input type="text" placeholder="干啥呢？" />
+
+    <br /><br />
+    <!--required-->
+    <!--text, search, url, telephone, email, password, date pickers, number, checkbox, radio, file-->
+    <form action="#" method="get">
+        text:        <input name="a0" type="text" required /><br />
+        search:      <input name="a1" type="search" required /><br />
+        url:         <input name="a2" type="url" required /><br />
+        tel:         <input name="a3" type="tel" required /><br />
+        email:       <input name="a4" type="email" required /><br />
+        password:    <input name="a5" type="password" required /><br />
+        date:        <input name="a6" type="date" required /><br />
+       data pickers: <input name="a7" type="date" required /><br />
+        number:      <input name="a8" type="number" required /><br />
+        checkbox:    <input name="a9" type="checkbox" required /><br />
+        radio:       <input name="a10" type="radio" required /><br />
+        file:        <input name="a11" type="file" required /><br />
+        <input type="submit" value="提交" />
+    </form>
 </body>
 </html>

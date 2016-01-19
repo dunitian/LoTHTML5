@@ -43,7 +43,10 @@
     <Content Include="02.新增结构元素.html" />
     <Content Include="03.新增功能元素.html" />
     <Content Include="04.input新增类型.html" />
+    <Content Include="06.表单新增系列.html" />
+    <Content Include="images\1.jpg" />
     <Content Include="LifeDemo\01.搜索框效果.html" />
+    <Content Include="test.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
