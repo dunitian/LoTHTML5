@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>逆天实验室-播放器案例</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2"></script>
+</head>
+<body>
+    <!--小播放器-->
+    <video id="myvideo" src="../images/big.mp4" poster="http://dnt.dkill.net/Images/banner.jpg" controls loop>你的浏览器太弱了，请考虑用谷歌或者最新版本的浏览器</video>
+    <script type="text/javascript">
+        var musicObj = $("#myvideo");
+        //单击控制播放与否
+        musicObj.click(function () {
+            if (this.paused) {
+                this.play();
+            } else {
+                this.pause();
+            }
+        });
+        //.keydown(function (e) {
+        //    //键盘控制进度和声音
+        //    console.log(e.keyCode);
+        //    if (e.keyCode == 37) {
+        //        //左
+        //        console.log('左')
+        //    } else if (e.keyCode == 39) {
+        //        //右
+        //        console.log('右')
+        //    } else if (e.keyCode == 38) {
+        //        //上
+        //        console.log('上')
+        //    } else if (e.keyCode == 40) {
+        //        //下
+        //        console.log('下')
+        //    }
+        //})
+    </script>
+</body>
+</html>
