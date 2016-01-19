@@ -44,7 +44,10 @@
     <Content Include="03.新增功能元素.html" />
     <Content Include="04.input新增类型.html" />
     <Content Include="06.表单新增系列.html" />
+    <Content Include="07.浏览器支持格式检测.html" />
+    <Content Include="08.多媒体系列.html" />
     <Content Include="images\1.jpg" />
+    <Content Include="images\big.mp4" />
     <Content Include="LifeDemo\01.搜索框效果.html" />
     <Content Include="test.html" />
   </ItemGroup>
@@ -53,6 +56,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="05.input新增属性.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

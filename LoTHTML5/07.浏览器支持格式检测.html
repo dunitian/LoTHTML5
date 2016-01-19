@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>浏览器支持格式检测</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    检测浏览器支持什么音频（视频）格式
+    <script type="text/javascript">
+        //判断浏览器支持什么音频格式
+        function checkAudio() {
+            var myAudio = document.createElement('audio');
+            if (myAudio.canPlayType) {
+                if (myAudio.canPlayType('audio/mpeg')) {
+                    document.write("您的浏览器支持mp3编码。<br />");
+                }
+                if (myAudio.canPlayType('audio/ogg; codecs="vorbis"')) {
+                    document.write("您的浏览器支持oog编码。<br />");
+                }
+                if (myAudio.canPlayType('audio/mp4; codecs="mp4a.40.5"')) {
+                    document.write("您的浏览器支持aac编码。");
+                }
+            }
+            else {
+                document.write("您的浏览器不支持要检测的音频格式。");
+            }
+        }
+        //判断浏览器支持什么视频格式
+        function checkVideo() {
+            var myVideo = document.createElement('video');
+            if (myVideo.canPlayType) {
+                if (myVideo.canPlayType('video/mp4;codecs="avc1.64001E"')) {
+                    document.write("您的浏览器支持h264编码。<br />");
+                }
+                if (myVideo.canPlayType('video/ogg; codecs="vp8"')) {
+                    document.write("您的浏览器支持vp8编码。<br />");
+                }
+                if (myVideo.canPlayType('video/ogg; codecs="theora"')) {
+                    document.write("您的浏览器支持theora编码。");
+                }
+            }
+            else {
+                document.write("您的浏览器不支持要检测的视频格式。");
+            }
+        }
+
+        window.onload = function () {
+            checkAudio();
+            document.write("<br/><br/>");
+            checkVideo();
+        }
+    </script>
+</body>
+</html>
