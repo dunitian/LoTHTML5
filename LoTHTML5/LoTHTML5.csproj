@@ -46,13 +46,11 @@
     <Content Include="06.表单新增系列.html" />
     <Content Include="07.浏览器支持格式检测.html" />
     <Content Include="08.多媒体系列.html" />
-    <Content Include="demo.html" />
     <Content Include="images\1.jpg" />
     <Content Include="images\big.mp4" />
     <Content Include="javascript\jquery-1.8.3.min.js" />
     <Content Include="LifeDemo\01.搜索框效果.html" />
     <Content Include="LifeDemo\02.播放器案例.html" />
-    <Content Include="lotvideo.js" />
     <Content Include="test.html" />
   </ItemGroup>
   <ItemGroup>
