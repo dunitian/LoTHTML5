@@ -6,21 +6,52 @@
     <meta charset="utf-8" />
 </head>
 <body>
+    <br /><br />
     <!--下工具栏-->
     <video src="http://www.w3school.com.cn/i/movie.mp4" controls></video>
 
+    <br /><br />
     <!--自动播放-->
     <video src="http://www.w3school.com.cn/i/movie.ogg" autoplay></video>
 
+    <br /><br />
     <!--多源播放-->
     <video controls>
         <source src="http://www.w3school.com.cn/i/movie.mp4" type="video/mp4" />
         <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/ogg" />
     </video>
 
+    <br /><br />
     <!--视频封面-->
     <video src="images/big.mp4" poster="http://dnt.dkill.net/Images/banner.jpg" controls loop></video>
 
-    
+
+    <br /><br />
+    <!--播放带有字幕的视频-->
+    <video src="images/big.mp4" controls>
+        <track kind="subtitles" src="images/阿凡达.zh.srt" srclang="zh" label="Chinese" />
+    </video>
+    <script type="text/javascript">
+        track.addEventListener('load', function () {
+            var c = video.textTracks[0].cues;
+            for (var i = 0; i < c.length; i++) {
+                var s = document.createElement("span");
+                s.innerHTML = c[i].text;
+                s.setAttribute('data-start', c[i].startTime);
+                s.addEventListener("click", seek);
+                controlbar.appendChild(s);
+            }
+        });
+    </script>
+    <br /><br />
+    <!--音频播放-->
+    <audio src="http://dnt.dkill.net/DNT/music/棋子.mp3" controls></audio>
+
+    <br /><br />
+    <!--多源播放-->
+    <audio controls>
+        <source src="http://www.dkill.net/DNT/music/棋子.ogg" type="audio/ogg" />
+        <source src="http://dnt.dkill.net/DNT/music/棋子.mp3" type="audio/mp3" />
+    </audio>
 </body>
 </html>

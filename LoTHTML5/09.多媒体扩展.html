@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>09.多媒体扩展</title>
+    <meta charset="utf-8" />
+    <script src="javascript/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <video id="myvideo"></video>
+    <video id="twovideo" src="images/big.mp4" poster="http://dnt.dkill.net/Images/banner.jpg" controls style="display:none;"></video>
+    <script type="text/javascript">
+        $(function () {
+            var videoObj = $('#myvideo');
+            var This = videoObj.get(0);
+            This.controls = true;
+            This.poster = 'http://dnt.dkill.net/Images/banner.jpg';
+            This.src = 'images/big.mp4';
+            This.addEventListener('pause', function () {
+                alert('视频这么精彩你丫还敢暂停？');
+            });
+        });
+
+        //方法二
+        //document.getElementById('myvideo').addEventListener('pause', function () {
+        //    alert('视频这么精彩你丫还敢暂停？');
+        //});
+
+        $('#myvideo').click(function () {
+            console.log('buffered：' + this.buffered);
+            console.log('defaultPlaybackRate：' + this.defaultPlaybackRate);
+            console.log('duration：' + this.duration);
+
+        });
+
+        $('#twovideo').click(function () {
+            console.log('只读属性：');
+            console.log('ended：' + this.ended);
+            console.log('paused：' + this.paused);
+            console.log('seeking：' + this.seeking);
+            console.log('duration：' + this.duration);
+            console.log('currentSrc：' + this.currentSrc);
+            console.log('readyState：' + this.readyState);
+            console.log('networkState：' + this.networkState);
+            //返回对象
+            console.log('error：' + this.error);
+            console.log('played：' + this.played);
+            console.log('seekable：' + this.seekable);
+            console.log('buffered：' + this.buffered);
+
+            //可读可写
+            console.log('可读可写：');
+            console.log('src：' + this.src);
+            console.log('loop：' + this.loop);
+            console.log('muted：' + this.muted);
+            console.log('poster：' + this.poster);
+            console.log('volume：' + this.volume);
+            console.log('preload：' + this.preload);//默认为auto
+            console.log('controls：' + this.controls);
+            console.log('autoplay：' + this.autoplay);
+            console.log('currentTime：' + this.currentTime);
+            console.log('playbackRate：' + this.playbackRate);
+            console.log('defaultPlaybackRate：' + this.defaultPlaybackRate);
+        });
+    </script>
+</body>
+</html>
