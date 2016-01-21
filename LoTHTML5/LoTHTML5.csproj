@@ -47,6 +47,9 @@
     <Content Include="07.浏览器支持格式检测.html" />
     <Content Include="08.多媒体系列.html" />
     <Content Include="09.多媒体扩展.html" />
+    <Content Include="10.初识画布.html" />
+    <Content Include="11.绘制直线.html" />
+    <Content Include="12.绘制矩形.html" />
     <Content Include="images\1.jpg" />
     <Content Include="images\big.mp4" />
     <Content Include="javascript\jquery-1.8.3.min.js" />

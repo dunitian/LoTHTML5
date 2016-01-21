@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>10.初识画布</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        .borderOne {
+            border: 1px solid #8a1010;
+            width: 300px;
+            height: 150px;
+        }
+
+        canvas {
+            border: 1px solid #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <div class="borderOne"></div>
+
+    <!--1.定义一个id-->
+    <canvas id="canvasOne" width="300" height="300"></canvas>
+
+    <script type="text/javascript">
+        //2.获取canvas对象
+        var canvasObj = document.getElementById('canvasOne');
+        //3.通过getContext获取上下文
+        var context = canvasObj.getContext("2d");
+        //4.通过javascript进行绘制
+        context.fillStyle = "red";
+        context.fillRect(125, 125, 50, 50);
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>11.绘制直线</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        canvas {
+            border: 1px solid #8a1010;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvasOne" width="300" height="300"></canvas>
+<script type="text/javascript">
+    var canvasObj = document.getElementById('canvasOne');
+    var context = canvasObj.getContext("2d");
+    //context.strokeStyle = "#ff6a00";
+    context.moveTo(0, 0);//起点
+    context.lineTo(300, 300);//终点
+    context.stroke();//画
+
+    context.moveTo(0, 300);
+    context.lineTo(300, 0);
+    context.stroke();
+</script>
+</body>
+</html>
