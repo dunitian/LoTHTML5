@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>14.绘制弧线</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        canvas {
+            border: 1px solid #8a1010;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvasOne" width="300" height="300"></canvas>
+<canvas id="canvasTwo" width="300" height="300"></canvas>
+<canvas id="canvasThree" width="300" height="300"></canvas>
+<script type="text/javascript">
+    //第一个画布
+    var canvasObj = document.getElementById('canvasOne');
+    var context = canvasObj.getContext("2d");
+    for (var i = 0; i <= 15; i++) {
+        context.fillStyle = 'rgb(0,50,0)';
+        context.beginPath();//开始绘制路径
+        context.arc(0, 150, i * 10, 0, Math.PI * 1.5);//注意：x，y 坐标这次是代表圆心
+        //context.closePath();//结束绘制路径
+        context.stroke();//填充
+    }
+    //第二个画布
+    var canvasObj2 = document.getElementById('canvasTwo');
+    var context2 = canvasObj2.getContext("2d");
+    for (var i = 0; i <= 30; i++) {
+        context2.fillStyle = 'rgb(0,0,50)';
+        context2.beginPath();//开始绘制路径
+        context2.arc(0, 0, i * 10, 0, Math.PI * 1.5);//注意：x，y 坐标这次是代表圆心
+        //context2.closePath();//结束绘制路径
+        context2.stroke();//填充
+    }
+    //第三个画布-搞怪来袭
+    var canvasObj3 = document.getElementById('canvasThree');
+    var context3 = canvasObj3.getContext("2d");
+    for (var i = 0; i <= 30; i++) {
+        context3.fillStyle = 'rgb(0,0,50)';
+        context3.beginPath();//开始绘制路径
+        context3.arc(0, 150, i * 10, 1, 3);//注意：x，y 坐标这次是代表圆心
+        context3.closePath();//结束绘制路径,路径不闭合的情况下会自动补上一个直线，所以就搞怪了
+        context3.stroke();//填充
+    }
+</script>
+</body>
+</html>

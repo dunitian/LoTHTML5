@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>16.绘制三角形</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        canvas {
+            border: 1px solid #8a1010;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="200" height="200"></canvas>
+    <script type="text/javascript">
+        var c = document.getElementById("myCanvas");
+        var context = c.getContext("2d");
+        context.strokeStyle = "red";
+        context.beginPath();
+        context.moveTo(25, 25);
+        context.lineTo(150, 25);
+        context.lineTo(25, 150);
+        context.closePath();
+        context.stroke();
+    </script>
+</body>
+
+</html>

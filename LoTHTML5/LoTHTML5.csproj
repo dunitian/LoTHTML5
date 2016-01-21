@@ -50,6 +50,14 @@
     <Content Include="10.初识画布.html" />
     <Content Include="11.绘制直线.html" />
     <Content Include="12.绘制矩形.html" />
+    <Content Include="14.绘制弧线.html" />
+    <Content Include="20.html" />
+    <Content Include="15.探索closePath.html" />
+    <Content Include="16.绘制三角形.html" />
+    <Content Include="17.清空画布.html" />
+    <Content Include="18.html" />
+    <Content Include="19.html" />
+    <Content Include="13.绘制圆形.html" />
     <Content Include="images\1.jpg" />
     <Content Include="images\big.mp4" />
     <Content Include="javascript\jquery-1.8.3.min.js" />
