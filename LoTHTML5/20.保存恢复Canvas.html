@@ -12,33 +12,40 @@
 </head>
 <body>
     <canvas id="canvasOne" width="300" height="300"></canvas>
-    <input id="clickMe" type="button" value="保存画布" />
-    <input id="resetMe" type="button" value="恢复画布" />
-    <input id="canvasBtn" type="button" value="来涂鸦呗" />
+    <input id="clickMe" type="button" value="保存画布样式" />
+    <input id="canvasBtn" type="button" value="我们来涂鸦呗" />
+    <input id="resetMe" type="button" value="恢复样式并涂鸦" />
 
     <script type="text/javascript">
+        //开始绘制矩形
         var canvasObj = document.getElementById('canvasOne');
         var context = canvasObj.getContext("2d");
-        context.strokeStyle = 'rgb(0,255,0)';
-        context.strokeRect(100, 125, 100, 50);
+        context.fillStyle = "rgb(255,0,0)";
+        context.fillRect(30, 20, 100, 100);
+        context.fill();
+        context.strokeStyle = "rgb(0,0,255)";
+        context.strokeRect(20, 20, 100, 100);
+        context.stroke();
 
         document.getElementById('clickMe').onclick = function () {
             context.save();//保存画布
-            context.clearRect(0, 0, 300, 300);
-            console.log('保存画布');
-            console.log(context);
         }
 
+        //绘制另外一个矩形
+        document.getElementById('canvasBtn').onclick = function () {
+            context.fillStyle = "rgb(0,0,255)";
+            context.fillRect(150, 20, 100, 100);
+            context.fill();
+            context.strokeStyle = "rgb(255,0,0)";
+            context.strokeRect(140, 20, 100, 100);
+            context.stroke();
+        }
+
+        //恢复样式并涂鸦
         document.getElementById('resetMe').onclick = function () {
             context.restore();//恢复画布
-            console.log('恢复画布');
-            console.log(context);
-        }
-
-        document.getElementById('canvasBtn').onclick = function () {
-            context.moveTo(0, 0);
-            context.lineTo(300, 300);
-            context.stroke();
+            context.fillRect(20, 140, 50, 50);
+            context.strokeRect(80, 140, 50, 50);
         }
     </script>
 </body>

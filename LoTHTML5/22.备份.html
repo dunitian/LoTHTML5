@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>21.移动坐标空间</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        canvas {
+            border: 1px solid #8a1010;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvasOne" width="600" height="120"></canvas>
+    <script type="text/javascript">
+        var canvasObj= document.getElementById('canvasOne');
+        var context = canvasObj.getContext('2d');
+
+        function drawTop(fillStyle) {
+            context.fillStyle = fillStyle;
+            context.beginPath();
+            context.arc(0, 0, 30, 0, Math.PI, true);
+            context.closePath();
+            context.fill();
+        }
+        function drawGrip() {
+            context.save();
+            context.fillStyle = "blue";
+            context.fillRect(-1.5, 0, 1.5, 40);
+            context.beginPath();
+            context.strokeStyle = "blue";
+            context.arc(-5, 40, 4, Math.PI, Math.PI * 2, true);
+            context.stroke();
+            context.closePath();
+            context.restore();
+        }
+        function draw() {
+            // 注意：所有的移动都是基于这一上下文。
+            context.translate(5, 50);
+            for (var i = 1; i < 10; i++) {
+                context.save();
+                context.translate(60 * i, 0);
+                drawTop("rgb(" + (25 * i) + "," + (255 - 25 * i) + ",255)");
+                drawGrip();
+                context.restore();
+            }
+        }
+        window.onload = function () {
+            draw();
+        }
+
+    </script>
+</body>
+</html>
