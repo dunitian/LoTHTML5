@@ -51,12 +51,12 @@
     <Content Include="11.绘制直线.html" />
     <Content Include="12.绘制矩形.html" />
     <Content Include="14.绘制弧线.html" />
-    <Content Include="20.html" />
+    <Content Include="20.保存恢复Canvas.html" />
     <Content Include="15.探索closePath.html" />
     <Content Include="16.绘制三角形.html" />
     <Content Include="17.清空画布.html" />
-    <Content Include="18.html" />
-    <Content Include="19.html" />
+    <Content Include="18.二次方贝塞尔曲线.html" />
+    <Content Include="19.三次方贝塞尔曲线.html" />
     <Content Include="13.绘制圆形.html" />
     <Content Include="images\1.jpg" />
     <Content Include="images\big.mp4" />
@@ -73,6 +73,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\阿凡达.zh.srt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
