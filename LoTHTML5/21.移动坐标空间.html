@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>21.移动坐标空间</title>
@@ -10,36 +11,73 @@
         }
     </style>
 </head>
+
 <body>
-    <canvas id="canvasOne" width="600" height="150"></canvas>
+    <canvas id="canvasOne" width="600" height="120"></canvas>
+    <input id="btn" type="button" value="天女散花" />
     <script type="text/javascript">
         var canvasObj = document.getElementById('canvasOne');
         var context = canvasObj.getContext('2d');
-        context.translate(70, 50);//x轴方向右移70，y轴方向下移50
 
         function draw() {
-            //画伞的顶部
-            context.fillStyle = 'rgb(0,255,0)';
-            context.beginPath();
-            context.arc(0, 0, 30, 0, Math.PI, true);//在起点位置顺时针画一个半圆
-            context.closePath();
-            context.fill();
+            for (var i = 1; i < 10; i++) {
+                context.save();//保存一下状态
 
-            context.save();//保存一下状态
+                context.translate(60 * i, 50);//x轴方向右移60*i，y轴方向下移50
 
-            //画伞的底部
-            context.fillStyle = "black";
-            //
-            context.fillRect(0, 0, 2, 30);
-            context.beginPath();
-            //context.arc(15,15,2)
+                //画伞的顶部
+                context.fillStyle = 'rgb(' + i * 25 + ',' + 0 + ',' + 255 + ')';
+                context.beginPath();
+                context.arc(0, 0, 30, 0, Math.PI, true);//在起点位置顺时针画一个半圆
+                context.closePath();
+                context.fill();
 
-            context.restore();//恢复一下状态
+                //画伞的底部
+                context.strokeStyle = "red";
+                context.strokeRect(-0.2, 0, 0.4, 30);
+                //画伞的根部
+                context.beginPath();
+                context.arc(-5, 30, 5, 0, Math.PI);//圆心左移五个单位，圆的右边点就在根部了
+                context.stroke();
+
+                context.restore();//恢复一下状态（不然每次都移动坐标原点，就变成天女散花了）
+            }
         }
+
+        function onlyDraw() {
+            for (var i = 1; i < 10; i++) {
+                //x轴方向右移60+i，y轴方向下移50
+                context.translate(60 + i, 50);
+
+                //画伞的顶部
+                context.fillStyle = 'rgb(' + 255 + ',' + i * 25 + ',' + 0 + ')';
+                context.beginPath();
+                context.arc(0, 0, 30, 0, Math.PI, true);//在起点位置顺时针画一个半圆
+                context.closePath();
+                context.fill();
+
+                //画伞的底部
+                context.strokeStyle = "red";
+                context.strokeRect(-0.2, 0, 0.4, 30);
+                //画伞的根部
+                context.beginPath();
+                context.arc(-5, 30, 5, 0, Math.PI);//圆心左移五个单位，圆的右边点就在根部了
+                context.stroke();
+            }
+        }
+
         window.onload = function () {
             draw();
         }
 
+        //天女散花
+        document.getElementById('btn').onclick = function () {
+            context.clearRect(0, 0, 900, 900);
+            canvasObj.width = 660;
+            canvasObj.height = 520;
+            onlyDraw();
+        }
     </script>
 </body>
+
 </html>

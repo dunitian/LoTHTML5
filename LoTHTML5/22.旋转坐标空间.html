@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        canvas {
+            border: 1px solid #8a1010;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvasOne" width="600" height="600"></canvas>
+    <script type="text/javascript">
+        var canvasObj = document.getElementById('canvasOne');
+        var context = canvasObj.getContext('2d');
+        context.translate(300, 300);
+
+        //画伞
+        function drawUmbrella(i) {
+            //画伞的顶部
+            context.fillStyle = 'rgb(' + i * 25 + ',' + 0 + ',' + 255 + ')';
+            context.beginPath();
+            context.arc(0, 0, 30, 0, Math.PI, true);//在起点位置顺时针画一个半圆
+            context.closePath();
+            context.fill();
+            //画伞的底部
+            context.strokeStyle = "red";
+            context.strokeRect(-0.2, 0, 0.4, 30);
+            //画伞的根部
+            context.beginPath();
+            context.arc(-5, 30, 5, 0, Math.PI);//圆心左移五个单位，圆的右边点就在根部了
+            context.stroke();
+        }
+
+        function draw() {
+            for (var i = 1; i <= 10; i++) {
+                context.save();//保存一下状态
+                context.rotate(Math.PI * (0.2 * i));//2Pi 弧度是一个圆
+                context.translate(0, 150);//越小越紧凑
+                drawUmbrella(i);//画伞（画伞代码未变）
+                context.restore();//恢复一下状态
+            }
+        }
+
+        window.onload = function () {
+            draw();
+        }
+    </script>
+</body>
+</html>
