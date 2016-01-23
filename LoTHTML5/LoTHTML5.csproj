@@ -60,8 +60,8 @@
     <Content Include="19.三次方贝塞尔曲线.html" />
     <Content Include="13.绘制圆形.html" />
     <Content Include="21.移动坐标空间.html" />
-    <Content Include="23.xxx.html" />
-    <Content Include="24.xxx.html" />
+    <Content Include="23.缩放图形案例.html" />
+    <Content Include="24.矩阵变幻.html" />
     <Content Include="25.xxx.html" />
     <Content Include="22.旋转坐标空间.html" />
     <Content Include="images\1.jpg" />

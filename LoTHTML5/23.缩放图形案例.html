@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>23.缩放图形案例</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        canvas {
+            border: 1px solid #8a1010;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvasOne" width="600" height="600"></canvas>
+    <script type="text/javascript">
+        var canvasObj = document.getElementById('canvasOne');
+        var context = canvasObj.getContext('2d');
+        context.translate(300, 300);
+        for (var i = 1; i < 50; i++) {
+            context.rotate(Math.PI / 9);//旋转
+            context.scale(1.1, 1.1);//扩大1.1倍
+            context.translate(0.5, 0.5);//平移
+
+            context.fillStyle = 'rgba(' + i * 5 + ',' + 0 + ',' + 200 + ',' + 0.5 + ')';
+            context.beginPath();
+            context.arc(0, 0, 1, 0, Math.PI * 2, true);
+            context.closePath();
+            context.fill();
+        }
+    </script>
+</body>
+</html>

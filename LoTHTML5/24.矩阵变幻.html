@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>24.矩阵变幻</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        canvas {
+            border: 1px solid #8a1010;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvasOne" width="600" height="600"></canvas>
+    <script type="text/javascript">
+        var canvasObj = document.getElementById('canvasOne');
+        var context = canvasObj.getContext('2d');
+        context.translate(200, 20);
+        for (var i = 1; i < 90; i++) {
+            context.save();
+            //参数：水平缩放绘图，水平倾斜绘图，垂直倾斜绘图，垂直缩放绘图，水平移动绘图，垂直移动绘图
+            context.transform(0.95, 0, 0, 0.95, 30, 30);
+            context.rotate(Math.PI / 12);//旋转角度
+            context.beginPath();
+            context.fillStyle = "rgba(255,0,0,0.5)";
+            context.arc(0, 0, 50, 0, Math.PI * 2, true);
+            context.closePath();
+            context.fill();
+        }
+        //参数：水平缩放绘图，水平倾斜绘图，垂直倾斜绘图，垂直缩放绘图，水平移动绘图，垂直移动绘图
+        context.setTransform(1, 0, 0, 1, 10, 10);
+        //检验一下是否变化过来了
+        context.fillStyle = "blue";
+        context.fillRect(0, 0, 50, 50);
+        context.fill();
+    </script>
+</body>
+</html>
