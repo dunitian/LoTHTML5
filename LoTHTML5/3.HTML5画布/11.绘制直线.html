@@ -16,10 +16,12 @@
     var canvasObj = document.getElementById('canvasOne');
     var context = canvasObj.getContext("2d");
     //context.strokeStyle = "#ff6a00";
+    context.beginPath();
     context.moveTo(0, 0);//起点
     context.lineTo(300, 300);//终点
     context.stroke();//画
 
+    context.beginPath();
     context.moveTo(0, 300);
     context.lineTo(300, 0);
     context.stroke();

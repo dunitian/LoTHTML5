@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid #8a1010;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvasOne" width="300" height="300"></canvas>
+    <script type="text/javascript">
+        var canvasObj = document.getElementById('canvasOne');
+        var context = canvasObj.getContext('2d');
+        for (var i = 1; i < 12; i++) {
+            context.strokeStyle = 'rgb(255,0,0)';
+            context.lineWidth = i;
+            context.beginPath();
+            context.moveTo(i * 20, 0);
+            context.lineTo(i * 20, 300);
+            //context.closePath();
+            context.stroke();
+        }
+    </script>
+</body>
+</html>

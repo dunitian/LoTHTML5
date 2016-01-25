@@ -40,30 +40,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="01.第一个页面.html" />
-    <Content Include="02.新增结构元素.html" />
-    <Content Include="03.新增功能元素.html" />
-    <Content Include="04.input新增类型.html" />
-    <Content Include="06.表单新增系列.html" />
-    <Content Include="07.浏览器支持格式检测.html" />
-    <Content Include="08.多媒体系列.html" />
-    <Content Include="09.多媒体扩展.html" />
-    <Content Include="10.初识画布.html" />
-    <Content Include="11.绘制直线.html" />
-    <Content Include="12.绘制矩形.html" />
-    <Content Include="14.绘制弧线.html" />
-    <Content Include="20.保存恢复Canvas.html" />
-    <Content Include="15.探索closePath.html" />
-    <Content Include="16.绘制三角形.html" />
-    <Content Include="17.清空画布.html" />
-    <Content Include="18.二次方贝塞尔曲线.html" />
-    <Content Include="19.三次方贝塞尔曲线.html" />
-    <Content Include="13.绘制圆形.html" />
-    <Content Include="21.移动坐标空间.html" />
-    <Content Include="23.缩放图形案例.html" />
-    <Content Include="24.矩阵变幻.html" />
-    <Content Include="25.xxx.html" />
-    <Content Include="22.旋转坐标空间.html" />
+    <Content Include="1.H5新增元素\01.第一个页面.html" />
+    <Content Include="1.H5新增元素\02.新增结构元素.html" />
+    <Content Include="1.H5新增元素\03.新增功能元素.html" />
+    <Content Include="1.H5新增元素\04.input新增类型.html" />
+    <Content Include="1.H5新增元素\06.表单新增系列.html" />
+    <Content Include="1.H5新增元素\07.浏览器支持格式检测.html" />
+    <Content Include="2.H5多媒体系\08.多媒体系列.html" />
+    <Content Include="2.H5多媒体系\09.多媒体扩展.html" />
+    <Content Include="3.HTML5画布\10.初识画布.html" />
+    <Content Include="3.HTML5画布\11.绘制直线.html" />
+    <Content Include="3.HTML5画布\12.绘制矩形.html" />
+    <Content Include="3.HTML5画布\14.绘制弧线.html" />
+    <Content Include="3.HTML5画布\20.保存恢复Canvas.html" />
+    <Content Include="3.HTML5画布\15.探索closePath.html" />
+    <Content Include="3.HTML5画布\16.绘制三角形.html" />
+    <Content Include="3.HTML5画布\17.清空画布.html" />
+    <Content Include="3.HTML5画布\18.二次方贝塞尔曲线.html" />
+    <Content Include="3.HTML5画布\19.三次方贝塞尔曲线.html" />
+    <Content Include="3.HTML5画布\13.绘制圆形.html" />
+    <Content Include="3.HTML5画布\21.移动坐标空间.html" />
+    <Content Include="3.HTML5画布\23.缩放图形案例.html" />
+    <Content Include="3.HTML5画布\24.矩阵变幻.html" />
+    <Content Include="3.HTML5画布\25.设置线条的粗细.html" />
+    <Content Include="3.HTML5画布\22.旋转坐标空间.html" />
     <Content Include="images\1.jpg" />
     <Content Include="images\big.mp4" />
     <Content Include="javascript\jquery-1.8.3.min.js" />
@@ -75,7 +75,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="05.input新增属性.html" />
+    <Content Include="1.H5新增元素\05.input新增属性.html" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\阿凡达.zh.srt" />
