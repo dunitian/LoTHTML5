@@ -10,17 +10,63 @@
         }
     </style>
 </head>
-<body>
+<body onload="draw();">
     <canvas id="canvasOne" width="600" height="500"></canvas>
     &nbsp;&nbsp;
     <canvas id="canvasTwo" width="600" height="500"></canvas>
     &nbsp;&nbsp;
     <img id="imgOne" src="/images/1.jpg" />
+    <br />
+    <input id="btn1" type="button" value="获取路径图片" />
+    <input id="btn2" type="button" value="获取页面图片" />
+    <input id="btn3" type="button" value="从Canvas获取" />
     <script type="text/javascript">
         var context = document.getElementById('canvasOne').getContext('2d');
-        var img = new Image;
-        img.src = document.images[0];
-        console.log(img.src);
+
+        //获取路径图片
+        document.getElementById('btn1').onclick = function () {
+            clearCanvas(context);
+            var img1 = new Image();
+            img1.src = '/images/1.jpg';
+            context.drawImage(img1, 150, 150);
+        }
+
+        //获取页面图片
+        document.getElementById('btn2').onclick = function () {
+            clearCanvas(context);
+            var img2 = document.getElementById('imgOne');
+            context.drawImage(img2, 150, 150, 200, 200);
+        }
+
+        //从Canvas获取
+        document.getElementById('btn3').onclick = function () {
+            clearCanvas(context);
+            var img3 = document.getElementById('canvasTwo');
+            context.drawImage(img3, 150, 150, 300, 250, 50, 50, 400, 300);
+        }
+
+        //画布2的绘制
+        function draw() {
+            var ctx = document.getElementById('canvasTwo').getContext('2d');
+            ctx.beginPath();
+            ctx.arc(200, 200, 100, 0, Math.PI * 2, true);
+            ctx.closePath();
+            ctx.fillStyle = 'yellow';
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.lineTo(600, 500);
+            ctx.stroke();
+            ctx.moveTo(600, 0);
+            ctx.lineTo(0, 500);
+            ctx.stroke();
+        }
+
+        //清除画布
+        function clearCanvas(context) {
+            context.clearRect(0, 0, 600, 600);
+        }
     </script>
 </body>
 </html>
