@@ -64,6 +64,14 @@
     <Content Include="3.HTML5画布\24.矩阵变幻.html" />
     <Content Include="3.HTML5画布\25.设置线条的粗细.html" />
     <Content Include="3.HTML5画布\22.旋转坐标空间.html" />
+    <Content Include="3.HTML5画布\27.设置连接处样式.html" />
+    <Content Include="3.HTML5画布\28.设置绘制交点的方式.html" />
+    <Content Include="3.HTML5画布\29.绘制线性渐变.html" />
+    <Content Include="3.HTML5画布\30.绘制径向渐变.html" />
+    <Content Include="3.HTML5画布\32.阴影系列.html" />
+    <Content Include="3.HTML5画布\31.绘制图案.html" />
+    <Content Include="3.HTML5画布\33.绘制文字.html" />
+    <Content Include="3.HTML5画布\34.绘制图片.html" />
     <Content Include="images\1.jpg" />
     <Content Include="images\big.mp4" />
     <Content Include="javascript\jquery-1.8.3.min.js" />
@@ -79,6 +87,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\阿凡达.zh.srt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="3.HTML5画布\26.设置端点样式.html" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

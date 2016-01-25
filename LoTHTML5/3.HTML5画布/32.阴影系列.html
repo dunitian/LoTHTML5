@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>32.阴影系列</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        canvas {
+            border: 1px solid #8a1010;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvasOne" width="600" height="600"></canvas>
+    <script type="text/javascript">
+        var canvasObj = document.getElementById('canvasOne');
+        var context = canvasObj.getContext('2d');
+
+        //设置前画个图
+        context.fillStyle = '#0094ff';
+        context.fillRect(410, 310, 50, 50);
+
+        //设置阴影
+        context.shadowOffsetX = 3;
+        context.shadowOffsetY = 3;
+        context.shadowBlur = 1;
+        context.shadowColor = '#808080';
+
+        //画矩形
+        context.fillRect(200, 200, 200, 100);
+
+        //绘图
+        var img = new Image();
+        img.src = '/images/1.jpg';
+        img.onload = function () {
+            context.fillStyle = context.createPattern(img, 'no-repeat');
+            context.fillRect(0, 0, 600, 600);
+        }
+    </script>
+</body>
+</html>

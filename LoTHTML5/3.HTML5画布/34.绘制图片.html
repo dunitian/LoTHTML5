@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>34.绘制图片</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        canvas {
+            border: 1px solid #8a1010;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvasOne" width="600" height="500"></canvas>
+    &nbsp;&nbsp;
+    <canvas id="canvasTwo" width="600" height="500"></canvas>
+    &nbsp;&nbsp;
+    <img id="imgOne" src="/images/1.jpg" />
+    <script type="text/javascript">
+        var context = document.getElementById('canvasOne').getContext('2d');
+        var img = new Image;
+        img.src = document.images[0];
+        console.log(img.src);
+    </script>
+</body>
+</html>

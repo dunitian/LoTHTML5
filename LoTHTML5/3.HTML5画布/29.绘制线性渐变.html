@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>29.绘制线性渐变</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        canvas {
+            border: 1px solid #8a1010;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvasOne" width="300" height="300"></canvas>
+    <canvas id="myCanvas" width="300" height="300"></canvas>
+    <script type="text/javascript">
+        var context = document.getElementById('canvasOne').getContext('2d');
+        var lingrad = context.createLinearGradient(0, 0, 0, 200);
+        lingrad.addColorStop(0, '#ff0000');
+        lingrad.addColorStop(1 / 7, '#ff9900');
+        lingrad.addColorStop(2 / 7, '#ffff00');
+        lingrad.addColorStop(3 / 7, '#00ff00');
+        lingrad.addColorStop(4 / 7, '#00ffff');
+        lingrad.addColorStop(5 / 7, '#0000ff');
+        lingrad.addColorStop(6 / 7, '#ff00ff');
+        lingrad.addColorStop(1, '#ff0000');
+        context.fillStyle = lingrad;
+        context.fillRect(10, 10, 200, 200);
+
+
+        var c = document.getElementById('myCanvas');
+        var ctx = c.getContext('2d');
+        var grd = ctx.createLinearGradient(0, 0, 170, 0);
+        grd.addColorStop(0.1, 'rgb(255,255,255)');
+        grd.addColorStop(0.5, 'rgb(0,100,0)');
+        grd.addColorStop(0.9, 'rgb(0,0,0)');
+        ctx.fillStyle = grd;
+        ctx.fillRect(20, 20, 150, 100);
+    </script>
+</body>
+</html>

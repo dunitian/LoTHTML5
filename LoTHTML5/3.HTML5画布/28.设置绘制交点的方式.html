@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>28.设置绘制交点的方式</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        canvas {
+            border: 1px solid #8a1010;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvasOne" width="1600" height="300"></canvas>
+    <script type="text/javascript">
+        var context = document.getElementById('canvasOne').getContext('2d');
+        for (var i = 1; i < 10; i++) {
+            context.strokeStyle = 'blue';
+            context.lineWidth = 10;
+            context.lineJoin = 'miter';
+            context.miterLimit = i * 10;
+            context.beginPath();
+            context.moveTo(10, i * 30);
+            context.lineTo(100, i * 30);
+            context.lineTo(10, 33 * i);
+            context.stroke();
+        }
+    </script>
+</body>
+</html>

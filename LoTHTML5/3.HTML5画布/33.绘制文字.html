@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>33.绘制文字</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        canvas {
+            border: 1px solid #8a1010;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvasOne" width="500" height="300"></canvas>
+    <script type="text/javascript">
+        var canvasObj = document.getElementById('canvasOne');
+        var context = canvasObj.getContext('2d');
+        var str = 'http://dnt.dkill.net';
+        context.fillStyle = 'rgba(255,0,0,0.9)';
+        context.strokeStyle = 'rgba(255,0,0,0.9)';
+
+        context.font = '30px 微软雅黑';
+        context.strokeText(str, 100, 40);
+        console.log(context.measureText(str).width);
+        context.fillText(str, 100, 80);
+        console.log(context.measureText(str).width);
+
+        context.font = 'bold 30px 微软雅黑';
+        context.strokeText(str, 100, 150);
+        console.log(context.measureText(str).width);
+        context.fillText(str, 100, 180);
+        console.log(context.measureText(str).width);
+    </script>
+</body>
+</html>

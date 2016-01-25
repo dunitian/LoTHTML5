@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>26.设置端点样式</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        canvas {
+            border: 1px solid #8a1010;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvasOne" width="300" height="300"></canvas>
+    <script type="text/javascript">
+        var canvasObj = document.getElementById('canvasOne');
+        var context = canvasObj.getContext('2d');
+        //定义数组
+        var lineCap = ['butt', 'round', 'square'];
+        // 绘制参考线。
+        context.strokeStyle = 'red';
+        context.beginPath();
+        context.moveTo(10, 10);
+        context.lineTo(10, 150);
+        context.moveTo(150, 10);
+        context.lineTo(150, 150);
+        context.stroke();
+        // 绘制直线段。
+        context.strokeStyle = 'blue';
+        for (var i = 0; i < lineCap.length; i++) {
+            context.lineWidth = 20;
+            context.lineCap = lineCap[i];
+            context.beginPath();
+            context.moveTo(10, 30 + i * 50);
+            context.lineTo(150, 30 + i * 50);
+            context.stroke();
+        }
+    </script>
+</body>
+</html>

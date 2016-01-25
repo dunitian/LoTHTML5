@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>27.设置连接处样式</title>
+	<meta charset="utf-8" />
+    <style type="text/css">
+        canvas {
+            border: 1px solid #8a1010;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvasOne" width="500" height="200"></canvas>
+    <script type="text/javascript">
+        var canvasObj = document.getElementById('canvasOne');
+        var context = canvasObj.getContext('2d');
+        var lineJoin = ['round', 'bevel', 'miter'];
+        context.strokeStyle = 'rgb(0,0,0)';
+        for (var i = 0; i < lineJoin.length; i++) {
+            context.lineWidth = 25;
+            context.lineJoin = lineJoin[i];
+            context.beginPath();
+            context.moveTo(10 + i * 150, 30);
+            context.lineTo(100 + i * 150, 30);
+            context.lineTo(100 + i * 150, 100);
+            context.stroke();
+        }
+    </script>
+</body>
+</html>
