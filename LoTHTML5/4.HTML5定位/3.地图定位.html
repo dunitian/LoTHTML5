@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>3.地图定位</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #dkillMap {
+            height: 100%;
+        }
+    </style>
+    <!--更好的在移动平台上展示-->
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <!--v2.0版本-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=b3g90mWBIE2VaSCcCuPCXjhj"></script>
+    <script type="text/javascript" src="http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2"></script>
+</head>
+<body>
+    <input id="btn" type="button" value="定位一个" onclick="getPosition();" />
+    <div id="dkillMap"></div>
+    <script type="text/javascript">
+        var map = new BMap.Map("dkillMap");// 创建地图实例
+        var point = new BMap.Point(116.404, 39.915);// 创建点坐标(经度,纬度)
+        map.centerAndZoom(point, 15); // 初始化地图,设置地图中心点
+        markerThere(point);
+
+        //标注当前位置
+        function markerThere(point) {
+            var marker = new BMap.Marker(point);// 创建标注
+            map.addOverlay(marker);// 将标注添加到地图中
+            marker.enableDragging();//可拖拽 disableDragging（不可拖拽）
+            marker.setAnimation(BMAP_ANIMATION_BOUNCE);//跳动的动画
+        }
+
+        //定位
+        function getPosition() {
+            if (window.navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    console.log('baidu');
+                    alert('经度：' + position.coords.longitude + ' 纬度：' + position.coords.latitude);
+                    var newPoint = new BMap.Point(position.coords.longitude, position.coords.latitude);
+                    map.panTo(newPoint);
+                    markerThere(newPoint);
+                }, function (error) {
+                    //错误回调函数
+                    var errorMsg = { 1: '位置服务被拒绝', 2: '获取不到位置信息', 3: '获取信息超时' };
+                    if (error.code > 3) {
+                        alert('未知错误：' + error.message);
+                    } else {
+                        alert(errorMsg[error.code] + "：" + error.message);
+                    }
+                }, { timeout: 30000, maximumAge: 60 * 1000 * 2 });
+            } else {
+                alert('不支持H5 Geolocation');
+            }
+        }
+    </script>
+</body>
+</html>
+

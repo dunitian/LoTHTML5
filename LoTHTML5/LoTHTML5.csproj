@@ -75,6 +75,8 @@
     <Content Include="4.HTML5定位\0.百度地图测试.html" />
     <Content Include="4.HTML5定位\1.兼容检测.html" />
     <Content Include="4.HTML5定位\2.地理定位.html" />
+    <Content Include="4.HTML5定位\3.地图定位.html" />
+    <Content Include="4.HTML5定位\4.行走跟踪.html" />
     <Content Include="images\1.jpg" />
     <Content Include="images\big.mp4" />
     <Content Include="javascript\jquery-1.8.3.min.js" />
