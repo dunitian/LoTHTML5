@@ -55,20 +55,27 @@
         // 添加定位控件
         var geolocationControl = new BMap.GeolocationControl();
         map.addControl(geolocationControl);
-        //geolocationControl.addEventListener("locationSuccess", function (e) {
-        //    // 定位成功事件
-        //    var address = '';
-        //    address += e.addressComponent.province;
-        //    address += e.addressComponent.city;
-        //    address += e.addressComponent.district;
-        //    address += e.addressComponent.street;
-        //    address += e.addressComponent.streetNumber;
-        //    alert("当前定位地址为：" + address);
-        //});
-        //geolocationControl.addEventListener("locationError", function (e) {
-        //    // 定位失败事件
-        //    alert(e.message);
-        //});
+        geolocationControl.addEventListener("locationSuccess", function (e) {
+            // 定位成功事件
+            var address = '';
+            address += e.addressComponent.province;
+            address += e.addressComponent.city;
+            address += e.addressComponent.district;
+            address += e.addressComponent.street;
+            address += e.addressComponent.streetNumber;
+            console.log("当前定位地址为：" + address);
+
+            var point1 = new BMap.Point(e.point.lng, e.point.lat);// 创建点坐标(经度,纬度)
+            var mk = new BMap.Marker(point1);// 创建标注
+            map.addOverlay(mk);// 将标注添加到地图中
+            mk.enableDragging();//可拖拽 disableDragging（不可拖拽）
+            mk.setAnimation(BMAP_ANIMATION_BOUNCE);//跳动的动画
+            map.panTo(point1);//移动
+        });
+        geolocationControl.addEventListener("locationError", function (e) {
+            // 定位失败事件
+            alert(e.message);
+        });
 
         //显示路况（先引入扩展的css和js）
         var ctrl = new BMapLib.TrafficControl();

@@ -76,7 +76,6 @@
     <Content Include="4.HTML5定位\1.兼容检测.html" />
     <Content Include="4.HTML5定位\2.地理定位.html" />
     <Content Include="4.HTML5定位\3.地图定位.html" />
-    <Content Include="4.HTML5定位\4.行走跟踪.html" />
     <Content Include="images\1.jpg" />
     <Content Include="images\big.mp4" />
     <Content Include="javascript\jquery-1.8.3.min.js" />
@@ -95,6 +94,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="3.HTML5画布\26.设置端点样式.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="4.HTML5定位\4.第三方定位.html" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
