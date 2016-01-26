@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #dkillMap {
+            height: 100%;
+        }
+    </style>
+    <meta charset="utf-8" />
+    <!--更好的在移动平台上展示-->
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <!--v2.0版本-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=b3g90mWBIE2VaSCcCuPCXjhj"></script>
+    <!--路况系列扩展样式+js-->
+    <link href="http://api.map.baidu.com/library/TrafficControl/1.4/src/TrafficControl_min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://api.map.baidu.com/library/TrafficControl/1.4/src/TrafficControl_min.js"></script>
+</head>
+<body>
+    <div id="dkillMap"></div>
+    <script type="text/javascript">
+        var map = new BMap.Map("dkillMap");// 创建地图实例
+        var point = new BMap.Point(116.404, 39.915);// 创建点坐标(经度,纬度)
+        map.centerAndZoom(point, 15);
+
+        //标注当前位置
+        var marker = new BMap.Marker(point);// 创建标注
+        map.addOverlay(marker);// 将标注添加到地图中
+        marker.enableDragging();//可拖拽 disableDragging（不可拖拽）
+        marker.setAnimation(BMAP_ANIMATION_BOUNCE);//跳动的动画
+        //添加事件
+        //marker.addEventListener("click", getAttr);
+        //function getAttr() {
+        //    var p = marker.getPosition();       //获取marker的位置
+        //    alert("marker的位置是" + p.lng + "," + p.lat);
+        //}
+
+        map.addControl(new BMap.NavigationControl({ anchor: BMAP_ANCHOR_BOTTOM_RIGHT }));// 添加平移缩放控件
+        map.addControl(new BMap.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_RIGHT }));// 添加比例尺控件
+        map.addControl(new BMap.MapTypeControl());//添加地图类型控件
+        map.enableScrollWheelZoom();//启用滚轮放大缩小
+        map.disable3DBuilding();// 禁用地图的3D楼块展现功能
+
+        // 添加定位控件
+        var geolocationControl = new BMap.GeolocationControl();
+        map.addControl(geolocationControl);
+        //geolocationControl.addEventListener("locationSuccess", function (e) {
+        //    // 定位成功事件
+        //    var address = '';
+        //    address += e.addressComponent.province;
+        //    address += e.addressComponent.city;
+        //    address += e.addressComponent.district;
+        //    address += e.addressComponent.street;
+        //    address += e.addressComponent.streetNumber;
+        //    alert("当前定位地址为：" + address);
+        //});
+        //geolocationControl.addEventListener("locationError", function (e) {
+        //    // 定位失败事件
+        //    alert(e.message);
+        //});
+
+        //显示路况（先引入扩展的css和js）
+        var ctrl = new BMapLib.TrafficControl();
+        map.addControl(ctrl);
+        ctrl.setAnchor(BMAP_ANCHOR_TOP_LEFT);
+    </script>
+</body>
+</html>
