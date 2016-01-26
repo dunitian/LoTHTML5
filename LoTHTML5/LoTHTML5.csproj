@@ -73,6 +73,8 @@
     <Content Include="3.HTML5画布\33.绘制文字.html" />
     <Content Include="3.HTML5画布\34.绘制图片.html" />
     <Content Include="4.HTML5定位\0.百度地图测试.html" />
+    <Content Include="4.HTML5定位\1.兼容检测.html" />
+    <Content Include="4.HTML5定位\2.地理定位.html" />
     <Content Include="images\1.jpg" />
     <Content Include="images\big.mp4" />
     <Content Include="javascript\jquery-1.8.3.min.js" />
