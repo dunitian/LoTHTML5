@@ -40,6 +40,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="0.实用_小案例\03.时间轴.html" />
     <Content Include="1.H5新增元素\01.第一个页面.html" />
     <Content Include="1.H5新增元素\02.新增结构元素.html" />
     <Content Include="1.H5新增元素\03.新增功能元素.html" />
@@ -76,6 +77,8 @@
     <Content Include="4.HTML5定位\1.兼容检测.html" />
     <Content Include="4.HTML5定位\2.地理定位.html" />
     <Content Include="4.HTML5定位\3.地图定位.html" />
+    <Content Include="5.H5Web存储\1.兼容检查.html" />
+    <Content Include="5.H5Web存储\2.WEB Storage.html" />
     <Content Include="images\1.jpg" />
     <Content Include="images\big.mp4" />
     <Content Include="javascript\jquery-1.8.3.min.js" />
@@ -97,6 +100,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="4.HTML5定位\4.第三方定位.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

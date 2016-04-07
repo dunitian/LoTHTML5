@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        body {
+            font-size: 100%;
+            color: #7f8c97;
+            font-family: '微软雅黑';
+            background-color: #e9f0f5;
+        }
+        /*容器*/
+        .paw-container {
+            width: 90%;
+            margin: 0 auto;
+        }
+        /*创建一条垂直线*/
+        #paw-timeline {
+            position: relative;
+            padding: 2em 0;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+
+            #paw-timeline::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                height: 100%;
+                width: 4px;
+                background: rgba(0,0,0,0.1);
+            }
+        /*循环小容器*/
+        .paw-timeline-block {
+            position: relative;
+            margin: 3em 0;
+        }
+
+            .paw-timeline-block:first-child {
+                margin-top: 0;
+            }
+
+            .paw-timeline-block:last-child {
+                margin-bottom: 0;
+            }
+        /*轴上的图标*/
+        .paw-timeline-icon {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1em;
+            height: 1em;
+            margin-left: -0.5em;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(9, 229, 34,0.5), 0 0 0 3px rgb(255,255,255);
+        }
+            /*光晕*/
+            .paw-timeline-icon:hover {
+                box-shadow: 0 0 0 5px rgba(9, 229, 34,0.5), 0 0 0 3px rgb(255,255,255);
+            }
+        /*日期*/
+        .paw-timeline-datetime {
+            position: absolute;
+            margin-left: -6em;
+            margin-top: -2em;
+            width: 7em;
+            font-weight: bold;
+        }
+        /*内容*/
+        .paw-timeline-content {
+            width: 45%;
+            padding: 1em;
+            margin-left: 0;
+            background: white;
+            position: relative;
+            border-radius: 0.5em;
+            box-shadow: 0 3px 0 #d7e4ed;
+            /*不加这个小尖角容易有点问题*/
+            position: relative;
+        }
+            /*第一个元素*/
+            .paw-timeline-content:first-child {
+                margin-top: 0;
+            }
+            /*最后一个元素*/
+            .paw-timeline-content:last-child {
+                margin-bottom: 0;
+            }
+            /*标题颜色*/
+            .paw-timeline-content h3 {
+                color: #303e49;
+            }
+            /*段落首行缩进*/
+            .paw-timeline-content p {
+                text-indent: 1em;
+                line-height: 1.8em;
+            }
+            /*阅读更多 超链接*/
+            .paw-timeline-content a {
+                text-decoration: none;
+                color: #7f8c97;
+            }
+                /*阅读更多 超链接*/
+                .paw-timeline-content a:hover {
+                    color: #0094ff;
+                }
+            /*小尖角*/
+            .paw-timeline-content .paw-timeline-main::before {
+                content: '';
+                top: 16px;
+                height: 0;
+                width: 0;
+                left: 100%;
+                position: absolute;
+                border: 7px solid transparent;
+                border-left: 7px solid white;
+            }
+        /*展览图*/
+        .paw-timeline-block img {
+            max-width: 100%;
+            min-width: 100%;
+        }
+        /*偶数个设置新样式*/
+        .paw-timeline-content:nth-child(2n) {
+            float: right;
+        }
+        /*清除浮动*/
+        .paw-timeline-content:nth-child(2n+1) {
+            clear: right;
+        }
+        /*小尖角反向*/
+        .paw-timeline-content:nth-child(2n) .paw-timeline-main::before {
+            content: '';
+            left: auto;
+            right: 100%;
+            border: 7px solid transparent;
+            border-right: 7px solid white;
+        }
+        /*动画效果*/
+        .paw-flash {
+            -webkit-transition: all 2s ease;
+            -moz-transition: all 2s ease;
+            -o-transition: all 2s ease;
+            transition: all 2s ease;
+        }
+
+        @media only screen and (max-width: 1170px) {
+            /*时间轴*/
+            .paw-timeline-icon, #paw-timeline::before {
+                left: 0;
+            }
+            /*时间*/
+            .paw-timeline-datetime {
+                margin-left: 1.5em;
+                margin-top: -2em;
+            }
+
+            .paw-timeline-content {
+                width: 80%;
+                position: relative;
+                margin: 2em 3em;
+            }
+
+                .paw-timeline-content:nth-child(2n) {
+                    float: none;
+                }
+
+                .paw-timeline-content:nth-child(2n+1) .paw-timeline-main::before {
+                    right:100%;
+                    left:auto;
+                    border: 7px solid transparent;
+                    border-right: 7px solid white;
+                }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="paw-timeline" class="paw-container">
+        <header><h2>2016年</h2></header>
+        <!--循环-->
+        <div>
+            <h3>03月</h3>
+            <!--循环-->
+            <div class="paw-timeline-block">
+                <!--时间-->
+                <div class="paw-timeline-icon">
+                    <span class="paw-timeline-datetime">2016-03-17</span>
+                </div>
+                <!--循环内容-->
+                <div class="paw-timeline-content">
+                    <a href="#" target="_blank">
+                        <header class="paw-timeline-main">
+                            <h3>标题</h3>
+                            <p>内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。</p>
+                        </header>
+                    </a>
+                    <div>
+                        <img src="http://dnt.dkill.net/Images/article/19.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="paw-timeline-content">
+                    <a href="#" target="_blank">
+                        <header class="paw-timeline-main">
+                            <h3>标题</h3>
+                            <p>内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。</p>
+                        </header>
+                    </a>
+                    <div>
+                        <img src="http://dnt.dkill.net/Images/article/7.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="paw-timeline-content">
+                    <a href="#" target="_blank">
+                        <header class="paw-timeline-main">
+                            <h3>标题</h3>
+                            <p>内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。</p>
+                        </header>
+                    </a>
+                    <div>
+                        <img src="http://dnt.dkill.net/Images/article/9.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="paw-timeline-content">
+                    <a href="#" target="_blank">
+                        <header class="paw-timeline-main">
+                            <h3>标题</h3>
+                            <p>内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。</p>
+                        </header>
+                    </a>
+                    <div>
+                        <img src="http://dnt.dkill.net/Images/article/17.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="paw-timeline-block">
+                <!--时间-->
+                <div class="paw-timeline-icon">
+                    <span class="paw-timeline-datetime">2016-03-16</span>
+                </div>
+                <!--循环内容-->
+                <div class="paw-timeline-content">
+                    <header class="paw-timeline-main">
+                        <h3>标题</h3>
+                        <p>内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。</p>
+                        <a href="#" class="paw-read-more" target="_blank">阅读全文</a>
+                    </header>
+                </div>
+                <div class="paw-timeline-content">
+                    <header class="paw-timeline-main">
+                        <h3>标题</h3>
+                        <p>内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。</p>
+                        <a href="#" class="paw-read-more" target="_blank">阅读全文</a>
+                    </header>
+                </div>
+                <div class="paw-timeline-content">
+                    <header class="paw-timeline-main">
+                        <h3>标题</h3>
+                        <p>内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。</p>
+                        <a href="#" class="paw-read-more" target="_blank">阅读全文</a>
+                    </header>
+                </div>
+                <div class="paw-timeline-content">
+                    <header class="paw-timeline-main">
+                        <h3>标题</h3>
+                        <p>内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。内容简介。。。</p>
+                        <a href="#" class="paw-read-more" target="_blank">阅读全文</a>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
